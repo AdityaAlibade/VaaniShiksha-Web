@@ -881,6 +881,45 @@ a {
   color: #6e9482;
 }
 
+.footer-right-col {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-full);
+  color: #e3f2ea;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.footer-github-link svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.footer-github-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.38);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.footer-github-link:hover svg {
+  transform: scale(1.1);
+}
+
 /* ==========================================================================
    DOWNLOAD MODAL
    ========================================================================== */
@@ -1152,6 +1191,12 @@ a {
 
   .footer-brand-row {
     flex-direction: column;
+  }
+
+  .footer-right-col {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 
   .modal-card {
