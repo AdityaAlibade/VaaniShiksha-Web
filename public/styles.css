@@ -663,6 +663,31 @@ a {
   flex: 1;
 }
 
+.node-icon-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.step-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--color-terracotta-600);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
 .node-icon {
   width: 58px;
   height: 58px;
@@ -674,7 +699,7 @@ a {
   justify-content: center;
   font-size: 1.5rem;
   box-shadow: 0 4px 12px rgba(17, 75, 50, 0.08);
-  margin-bottom: 10px;
+  margin-bottom: 0;
   transition: all var(--transition);
 }
 
@@ -1018,6 +1043,52 @@ a {
   font-weight: 600;
 }
 
+/* Modal Dynamic Status Banner */
+.modal-status-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-green-50);
+  border: 1.5px solid rgba(28, 117, 79, 0.35);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(17, 75, 50, 0.04);
+}
+
+.modal-status-banner.status-active {
+  background: #eef8f2;
+  border-color: #2bb373;
+}
+
+.status-pulse-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #2bb373;
+  box-shadow: 0 0 0 0 rgba(43, 179, 115, 0.7);
+  animation: pulse-ring 1.8s infinite;
+  flex-shrink: 0;
+}
+
+.status-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-info strong {
+  font-size: 0.88rem;
+  color: var(--color-green-900);
+  line-height: 1.25;
+}
+
+.status-info span {
+  font-size: 0.78rem;
+  color: var(--color-text-body);
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
 .modal-details-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1026,7 +1097,7 @@ a {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 12px 14px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -1054,7 +1125,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .btn-modal-primary {
@@ -1063,14 +1134,23 @@ a {
   justify-content: center;
   gap: 10px;
   background: linear-gradient(135deg, var(--color-terracotta-500) 0%, var(--color-terracotta-600) 100%);
-  color: #ffffff;
-  padding: 14px 24px;
+  color: #ffffff !important;
+  padding: 15px 24px;
   border-radius: var(--radius-full);
   font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
   box-shadow: 0 4px 18px rgba(214, 85, 41, 0.35);
   transition: var(--transition);
+  min-height: 50px;
+  cursor: pointer;
+}
+
+.btn-modal-primary svg,
+.btn-modal-primary .modal-btn-arrow {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 .btn-modal-primary:hover {
@@ -1078,55 +1158,71 @@ a {
   box-shadow: 0 8px 24px rgba(214, 85, 41, 0.45);
 }
 
+.btn-modal-primary:active {
+  transform: scale(0.98);
+}
+
 .btn-modal-secondary {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   background: var(--color-surface);
   color: var(--color-green-800);
   border: 1.5px solid var(--color-green-800);
-  padding: 12px 20px;
+  padding: 13px 20px;
   border-radius: var(--radius-full);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.92rem;
   text-decoration: none;
   transition: var(--transition);
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.btn-modal-secondary svg {
+  flex-shrink: 0;
+  color: var(--color-green-800);
 }
 
 .btn-modal-secondary:hover {
   background: var(--color-green-50);
   border-color: var(--color-green-700);
   color: var(--color-green-900);
+  transform: translateY(-1px);
+}
+
+.btn-modal-secondary:active {
+  transform: scale(0.98);
 }
 
 .modal-guide-box {
   background: var(--color-cream-base);
   border: 1px solid var(--color-cream-200);
   border-radius: var(--radius-md);
-  padding: 14px 18px;
+  padding: 16px 18px;
 }
 
 .modal-guide-title {
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   font-weight: 700;
   color: var(--color-text-title);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .modal-guide-steps {
   list-style: decimal;
-  padding-left: 18px;
-  font-size: 0.8rem;
+  padding-left: 20px;
+  font-size: 0.82rem;
   color: var(--color-text-body);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .modal-guide-steps li {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .modal-guide-steps li:last-child {
@@ -1134,59 +1230,242 @@ a {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS
    ========================================================================== */
 @media (max-width: 960px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
+    gap: 44px;
   }
 
   .hero-cta-wrap {
     align-items: center;
   }
 
+  .hero-mockup-col {
+    margin-top: 10px;
+  }
+
   .compact-features-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .compact-pipeline-card {
+    padding: 32px 20px;
   }
 
   .pipeline-row {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 14px;
   }
 
   .pipe-arrow {
     display: none;
   }
+
+  .pipe-node {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 16px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding: 60px 0;
+  }
+
+  .section-heading-center {
+    margin-bottom: 36px;
+  }
+
+  .section-main-title {
+    font-size: 1.95rem;
+  }
+
+  .section-lead-text {
+    font-size: 0.96rem;
+  }
+
+  .hero-large-title {
+    font-size: clamp(2rem, 6.5vw, 2.6rem);
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+  }
 }
 
 @media (max-width: 640px) {
+  /* Navbar */
+  .site-header {
+    height: 68px;
+  }
+
+  .nav-container {
+    height: 68px;
+    padding: 0 16px;
+  }
+
+  .brand-official-logo {
+    height: 42px;
+    width: 42px;
+  }
+
+  .brand-title {
+    font-size: 1.15rem;
+  }
+
+  .brand-sub {
+    font-size: 0.64rem;
+  }
+
   .nav-menu {
     display: none;
   }
 
-  .compact-features-grid {
-    grid-template-columns: 1fr;
+  .btn-nav-download {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    gap: 6px;
   }
 
-  .btn-hero-cta, .btn-download-mega {
+  /* Hero Section */
+  .hero-section {
+    padding: 28px 0 44px;
+  }
+
+  .hero-badge-pill {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-small-heading {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-large-title {
+    font-size: clamp(1.85rem, 7.5vw, 2.35rem);
+    line-height: 1.18;
+    margin-bottom: 16px;
+  }
+
+  .hero-description {
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+  }
+
+  .btn-hero-cta {
     width: 100%;
+    max-width: 340px;
+    justify-content: center;
+    padding: 15px 24px;
+    font-size: 1.05rem;
+  }
+
+  .hero-meta-strip {
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  /* Phone Mockup on Mobile */
+  .phone-frame-wrapper {
+    max-width: 260px;
+  }
+
+  /* Re-style pill badges below phone for mobile instead of hiding */
+  .pill-badge {
+    position: static;
+    width: 100%;
+    max-width: 270px;
+    margin: 10px auto 0;
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .pill-badge.pill-top,
+  .pill-badge.pill-bottom {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  /* Pipeline on Mobile */
+  .pipeline-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 10px;
+  }
+
+  .node-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+
+  .node-title {
+    font-size: 0.8rem;
+  }
+
+  .pipeline-summary-note {
+    font-size: 0.86rem;
+    padding: 12px 16px;
+  }
+
+  /* Download Card on Mobile */
+  .download-hero-card {
+    padding: 32px 18px;
+    border-radius: var(--radius-lg);
+  }
+
+  .download-main-title {
+    font-size: 1.85rem;
+  }
+
+  .download-lead-text {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .btn-download-mega {
+    width: 100%;
+    max-width: 340px;
+    padding: 16px 20px;
+    font-size: 1.1rem;
     justify-content: center;
   }
 
-  .pill-badge {
+  .download-specs-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 18px;
+  }
+
+  .spec-divider {
     display: none;
   }
 
-  .download-hero-card {
-    padding: 36px 20px;
+  .spec-item {
+    justify-content: space-between;
+    background: var(--color-cream-base);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    font-size: 0.84rem;
   }
 
+  /* Footer on Mobile */
   .footer-container {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
 
   .footer-brand-row {
@@ -1196,16 +1475,99 @@ a {
   .footer-right-col {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+  }
+
+  /* Modal on Mobile */
+  .modal-overlay {
+    padding: 12px;
   }
 
   .modal-card {
-    padding: 24px 18px;
+    padding: 22px 16px;
+    border-radius: var(--radius-lg);
+    max-height: 88vh;
+  }
+
+  .modal-close-btn {
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .modal-header {
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+
+  .modal-header-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .modal-header-title {
+    font-size: 1.2rem;
+  }
+
+  .modal-header-sub {
+    font-size: 0.78rem;
+  }
+
+  .modal-details-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 10px 8px;
+  }
+
+  .modal-detail-label {
+    font-size: 0.66rem;
+  }
+
+  .modal-detail-val {
+    font-size: 0.8rem;
+  }
+
+  .btn-modal-primary {
+    font-size: 0.94rem;
+    padding: 13px 18px;
+  }
+
+  .btn-modal-secondary {
+    font-size: 0.88rem;
+    padding: 12px 16px;
+  }
+
+  .modal-guide-box {
+    padding: 12px 14px;
+  }
+
+  .modal-guide-steps {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand-title {
+    font-size: 1.02rem;
+  }
+
+  .btn-nav-download span {
+    display: none;
+  }
+
+  .btn-nav-download {
+    padding: 8px 10px;
+  }
+
+  .compact-features-grid {
+    grid-template-columns: 1fr;
   }
 
   .modal-details-grid {
     grid-template-columns: 1fr;
-    gap: 6px;
+    gap: 4px;
   }
 }
+
 

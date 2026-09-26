@@ -86,7 +86,7 @@
           <li><a href="#download" class="nav-link">Download</a></li>
         </ul>
 
-        <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases" data-open-modal="download" class="btn-nav-download" id="headerDownloadBtn">
+        <a href="#downloadModal" data-open-modal="download" class="btn-nav-download" id="headerDownloadBtn" aria-label="Open Download VaaniShiksha AI APK Modal">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -127,7 +127,7 @@
           </p>
 
           <div class="hero-cta-wrap">
-            <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases" data-open-modal="download" class="btn-hero-cta" id="heroDownloadBtn">
+            <a href="#downloadModal" data-open-modal="download" class="btn-hero-cta" id="heroDownloadBtn">
               <span class="cta-arrow">↓</span>
               <span>Download APK</span>
             </a>
@@ -271,7 +271,10 @@
             
             <!-- Step 1 -->
             <div class="pipe-node">
-              <div class="node-icon">🗣️</div>
+              <div class="node-icon-wrap">
+                <span class="step-badge">1</span>
+                <div class="node-icon">🗣️</div>
+              </div>
               <span class="node-title">Speak</span>
             </div>
 
@@ -279,7 +282,10 @@
 
             <!-- Step 2 -->
             <div class="pipe-node">
-              <div class="node-icon">🎙️</div>
+              <div class="node-icon-wrap">
+                <span class="step-badge">2</span>
+                <div class="node-icon">🎙️</div>
+              </div>
               <span class="node-title">Whisper ASR</span>
             </div>
 
@@ -287,7 +293,10 @@
 
             <!-- Step 3 -->
             <div class="pipe-node">
-              <div class="node-icon">🌐</div>
+              <div class="node-icon-wrap">
+                <span class="step-badge">3</span>
+                <div class="node-icon">🌐</div>
+              </div>
               <span class="node-title">IndicTrans2</span>
             </div>
 
@@ -295,7 +304,10 @@
 
             <!-- Step 4 -->
             <div class="pipe-node">
-              <div class="node-icon">📝</div>
+              <div class="node-icon-wrap">
+                <span class="step-badge">4</span>
+                <div class="node-icon">📝</div>
+              </div>
               <span class="node-title">Mother-Tongue Text</span>
             </div>
 
@@ -303,7 +315,10 @@
 
             <!-- Step 5 -->
             <div class="pipe-node">
-              <div class="node-icon">🔊</div>
+              <div class="node-icon-wrap">
+                <span class="step-badge">5</span>
+                <div class="node-icon">🔊</div>
+              </div>
               <span class="node-title">Indic Parler-TTS</span>
             </div>
 
@@ -311,7 +326,10 @@
 
             <!-- Step 6 -->
             <div class="pipe-node">
-              <div class="node-icon">👂</div>
+              <div class="node-icon-wrap">
+                <span class="step-badge">6</span>
+                <div class="node-icon">👂</div>
+              </div>
               <span class="node-title">Listen</span>
             </div>
 
@@ -344,7 +362,7 @@
           </p>
 
           <!-- Large Main Button -->
-          <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases" data-open-modal="download" class="btn-download-mega" id="finalDownloadBtn">
+          <a href="#downloadModal" data-open-modal="download" class="btn-download-mega" id="finalDownloadBtn" aria-label="Open Download VaaniShiksha AI Android APK Package">
             <span class="mega-arrow">↓</span>
             <span>DOWNLOAD APK</span>
           </a>
@@ -414,7 +432,7 @@
       
       <div class="modal-header">
         <img src="images/logo/official-logo.png" alt="VaaniShiksha AI" class="modal-header-icon">
-        <div>
+        <div class="modal-header-text">
           <div class="modal-header-title" id="modalTitle">VaaniShiksha AI</div>
           <div class="modal-header-sub">Official Android APK Release</div>
         </div>
@@ -436,12 +454,13 @@
       </div>
 
       <div class="modal-actions">
-        <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases/latest/download/VaaniShikshaAI.apk" class="btn-modal-primary" id="modalDownloadBtn" download>
-          <span>↓</span>
-          <span>Download Official APK (v1.0.0)</span>
+        <a href="downloads/VaaniShiksha%20AI.apk" download="VaaniShiksha AI.apk" class="btn-modal-primary" id="modalDownloadBtn">
+          <span class="modal-btn-arrow">↓</span>
+          <span id="modalDownloadBtnText">Download Official APK (v1.0.0)</span>
         </a>
+
         <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases" class="btn-modal-secondary" id="modalReleasesBtn" target="_blank" rel="noopener noreferrer">
-          <span>📦</span>
+          <span class="modal-btn-icon">📦</span>
           <span>View All Releases on GitHub</span>
         </a>
       </div>
