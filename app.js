@@ -3,12 +3,20 @@
  * High performance, zero external libraries, fully mobile-optimized.
  */
 
-// Download & Releases Configuration
+// Environment-aware APK distribution:
+// - On localhost/local development: serves directly from local 'downloads/VaaniShiksha AI.apk'
+// - On GitHub Pages / production: serves the official 580 MB release binary hosted on GitHub Releases
+//   (since GitHub Git repositories strictly enforce a 100 MB maximum file limit).
+const isLocalhost = window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1' || 
+                    window.location.protocol === 'file:';
+
+const LOCAL_APK_PATH = 'downloads/VaaniShiksha%20AI.apk';
+const RELEASE_APK_URL = 'https://github.com/AdityaAlibade/VaaniShiksha-Web/releases/download/v1.0.0/VaaniShiksha.AI.apk';
+
 const DOWNLOAD_CONFIG = {
-  // Direct Android APK package download with exact file name
-  apkUrl: 'downloads/VaaniShiksha%20AI.apk',
+  apkUrl: isLocalhost ? LOCAL_APK_PATH : RELEASE_APK_URL,
   fileName: 'VaaniShiksha AI.apk',
-  // Official GitHub Releases portal
   releasesUrl: 'https://github.com/AdityaAlibade/VaaniShiksha-Web/releases',
   githubRepoUrl: 'https://github.com/AdityaAlibade/VaaniShiksha-Web',
   version: '1.0.0',
@@ -81,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalDownloadBtn.setAttribute('download', DOWNLOAD_CONFIG.fileName);
 
     modalDownloadBtn.addEventListener('click', () => {
-      // Allow native browser download to preserve exact filename "VaaniShiksha AI.apk"
+      // Provide visual feedback while browser handles download
       if (modalDownloadBtnText) {
         modalDownloadBtnText.textContent = '✓ Downloading APK...';
         setTimeout(() => {
