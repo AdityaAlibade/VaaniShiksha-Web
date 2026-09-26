@@ -4,11 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VaaniShiksha AI - Offline AI Teaching Assistant for Mother-Tongue Education</title>
-  <meta name="description" content="VaaniShiksha AI is an offline AI teaching assistant that helps primary school learners interact, translate, and learn through their mother tongue. Free Android APK download.">
-  <meta name="keywords" content="VaaniShiksha AI, Offline AI, Tribal Education, Mother Tongue, Santali, Hindi, IndicTrans2, Whisper ASR, APK Download">
+  <meta name="description" content="VaaniShiksha AI is an offline Android AI teaching assistant that helps primary school learners interact, translate, and learn through their mother tongue without internet dependency. Free Android APK download.">
+  <meta name="keywords" content="VaaniShiksha AI, Offline AI, Tribal Education, Mother Tongue, Santali, Hindi, IndicTrans2, Whisper ASR, APK Download, EdTech India, NEP 2020">
+  <meta name="author" content="Aditya Alibade">
+  <meta name="robots" content="index, follow">
 
-  <!-- Favicon -->
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://adityaalibade.github.io/VaaniShiksha-Web/">
+
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#0a2d1d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adityaalibade.github.io/VaaniShiksha-Web/">
+  <meta property="og:site_name" content="VaaniShiksha AI">
+  <meta property="og:title" content="VaaniShiksha AI - Offline AI Teaching Assistant for Mother-Tongue Education">
+  <meta property="og:description" content="Empowering primary learners with 100% offline, on-device AI voice translation and mother-tongue learning.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/AdityaAlibade/VaaniShiksha-Web/main/images/logo/official-logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VaaniShiksha AI - Offline AI Teaching Assistant">
+  <meta name="twitter:description" content="Empowering primary learners with 100% offline, on-device AI voice translation and mother-tongue learning. Free APK download.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/AdityaAlibade/VaaniShiksha-Web/main/images/logo/official-logo.png">
+
+  <!-- Favicon and Touch Icons -->
   <link rel="icon" type="image/png" href="images/logo/official-logo.png">
+  <link rel="apple-touch-icon" href="images/logo/official-logo.png">
+
+  <!-- Structured Data: JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "VaaniShiksha AI",
+    "operatingSystem": "Android 9.0+",
+    "applicationCategory": "EducationalApplication",
+    "description": "VaaniShiksha AI is an offline Android AI teaching assistant designed to break language barriers in primary education through voice recognition, Indic translation, and speech synthesis.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "url": "https://adityaalibade.github.io/VaaniShiksha-Web/",
+    "downloadUrl": "https://github.com/AdityaAlibade/VaaniShiksha-Web/releases"
+  }
+  </script>
 
   <!-- Google Fonts: Plus Jakarta Sans & Outfit for modern clean typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +86,7 @@
           <li><a href="#download" class="nav-link">Download</a></li>
         </ul>
 
-        <a href="downloads/VaaniShikshaAI.apk" download class="btn-nav-download" id="headerDownloadBtn">
+        <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases" data-open-modal="download" class="btn-nav-download" id="headerDownloadBtn">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -83,7 +127,7 @@
           </p>
 
           <div class="hero-cta-wrap">
-            <a href="downloads/VaaniShikshaAI.apk" download class="btn-hero-cta" id="heroDownloadBtn">
+            <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases" data-open-modal="download" class="btn-hero-cta" id="heroDownloadBtn">
               <span class="cta-arrow">↓</span>
               <span>Download APK</span>
             </a>
@@ -300,7 +344,7 @@
           </p>
 
           <!-- Large Main Button -->
-          <a href="downloads/VaaniShikshaAI.apk" download class="btn-download-mega" id="finalDownloadBtn">
+          <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases" data-open-modal="download" class="btn-download-mega" id="finalDownloadBtn">
             <span class="mega-arrow">↓</span>
             <span>DOWNLOAD APK</span>
           </a>
@@ -310,7 +354,7 @@
             Android Application • APK • Free Download
           </div>
 
-          <!-- Placeholders for technical information -->
+          <!-- Technical Specs -->
           <div class="download-specs-bar">
             <div class="spec-item">
               <span class="spec-label">Version</span>
@@ -324,7 +368,7 @@
             <div class="spec-divider">|</div>
             <div class="spec-item">
               <span class="spec-label">Package Size</span>
-              <span class="spec-val">~48 MB</span>
+              <span class="spec-val">~550 MB (Full Offline Models)</span>
             </div>
           </div>
 
@@ -352,6 +396,62 @@
       </div>
     </div>
   </footer>
+
+  <!-- ==========================================================================
+       7. DOWNLOAD MODAL DIALOG
+       ========================================================================== -->
+  <div class="modal-overlay" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close download modal">✕</button>
+      
+      <div class="modal-header">
+        <img src="images/logo/official-logo.png" alt="VaaniShiksha AI" class="modal-header-icon">
+        <div>
+          <div class="modal-header-title" id="modalTitle">VaaniShiksha AI</div>
+          <div class="modal-header-sub">Official Android APK Release</div>
+        </div>
+      </div>
+
+      <div class="modal-details-grid">
+        <div class="modal-detail-item">
+          <span class="modal-detail-label">Release</span>
+          <span class="modal-detail-val">v1.0.0</span>
+        </div>
+        <div class="modal-detail-item">
+          <span class="modal-detail-label">Size</span>
+          <span class="modal-detail-val">~550 MB</span>
+        </div>
+        <div class="modal-detail-item">
+          <span class="modal-detail-label">Requirements</span>
+          <span class="modal-detail-val">Android 9.0+</span>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases/latest/download/VaaniShikshaAI.apk" class="btn-modal-primary" id="modalDownloadBtn" download>
+          <span>↓</span>
+          <span>Download Official APK (v1.0.0)</span>
+        </a>
+        <a href="https://github.com/AdityaAlibade/VaaniShiksha-Web/releases" class="btn-modal-secondary" id="modalReleasesBtn" target="_blank" rel="noopener noreferrer">
+          <span>📦</span>
+          <span>View All Releases on GitHub</span>
+        </a>
+      </div>
+
+      <div class="modal-guide-box">
+        <div class="modal-guide-title">
+          <span>ℹ️</span> How to Install on Android:
+        </div>
+        <ol class="modal-guide-steps">
+          <li>Download the APK file directly to your Android device or tablet.</li>
+          <li>Open the file from your notifications or <strong>Downloads</strong> folder.</li>
+          <li>If prompted, enable <em>"Allow installation from this source"</em> in Android Settings.</li>
+          <li>Tap <strong>Install</strong> to begin offline mother-tongue learning!</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

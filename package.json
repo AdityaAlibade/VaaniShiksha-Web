@@ -1,0 +1,20 @@
+{
+  "name": "vaanishiksha-web",
+  "version": "1.0.0",
+  "description": "Official Landing Page & Distribution Portal for VaaniShiksha AI",
+  "scripts": {
+    "dev": "npx -y serve . -p 3000",
+    "start": "npx -y serve . -p 3000",
+    "build": "echo 'Static landing page ready for deployment.'"
+  },
+  "keywords": [
+    "vaanishiksha-ai",
+    "offline-ai",
+    "mother-tongue-education",
+    "tribal-education",
+    "indic-ai",
+    "android-apk"
+  ],
+  "author": "Aditya Alibade <alibadeaditya@gmail.com>",
+  "license": "MIT"
+}

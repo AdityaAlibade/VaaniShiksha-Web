@@ -1,0 +1,5 @@
+# Robots.txt for VaaniShiksha AI
+User-agent: *
+Allow: /
+
+Sitemap: https://adityaalibade.github.io/VaaniShiksha-Web/sitemap.xml
