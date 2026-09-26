@@ -5,3 +5,6 @@ desktop.ini
 .vscode/
 .idea/
 *.log
+
+# Large binaries / Android APK files (exceeds GitHub 100MB limit)
+*.apk
